@@ -4,5 +4,5 @@
 services from the garage. So, the owner wants to have a digital repository of customers and the
 service they get. Also, the repository should allow adding new customers and services, deleting
 and modifying any existing records.</h3>
-![me coding real](https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif)
+<img src="https://media.tenor.com/cX92mi1p-NYAAAAd/coding-anime.gif" alt="me coding real">
 
