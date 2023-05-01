@@ -7,6 +7,5 @@ services from the garage. So, the owner wants to have a digital repository of cu
 service they get. Also, the repository should allow adding new customers and services, deleting
 and modifying any existing records.</h3>
 <img src="https://media.tenor.com/cX92mi1p-NYAAAAd/coding-anime.gif" alt="me coding real">
-<l></l>
 <h1>Execution<h1>
 <h2> We will be simulating Program Development Life Cycle (PDLC)</h2>
