@@ -13,7 +13,7 @@ and modifying any existing records.</h3>
 
 <h2>Planning:</h2>
 
-For this problem we will be making a garage pos system using visual studio (2023) and microsoft acess for database there is nothing we have to spend our budget. As our company negative amount of money 
+For this problem we will be making a garage pos system using visual studio (2023) and microsoft acess for database there is nothing we have to spend our budget. As our company negative has amount of money. We will try to finish this projects UI before <u>6th May 2023</u> and Coding part before this month(may) ends
 
 <img src="https://media.tenor.com/lh02oyf-wmYAAAAd/anime-concerned.gif" alt="me having money real">
 <br></br>
