@@ -9,7 +9,7 @@ and modifying any existing records.</h3>
 <img src="https://media.tenor.com/cX92mi1p-NYAAAAd/coding-anime.gif" alt="me coding real">
 <h1>Execution
 <h2> We will be simulating Program Development Life Cycle (PDLC)
-<hr class="rounded">
+
 
 <h2>Planning:</h2>
 
