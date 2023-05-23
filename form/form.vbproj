@@ -159,6 +159,8 @@
     <Content Include="data.accdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="imageds\close-square-svgrepo-com.png" />
+    <Content Include="imageds\close-square-svgrepo-com.svg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
