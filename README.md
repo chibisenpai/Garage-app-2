@@ -18,7 +18,7 @@ Making a Garage based POS system with Visual Studio and a database with Microsof
 <img src="https://media.tenor.com/lh02oyf-wmYAAAAd/anime-concerned.gif" alt="me having money real">
 <br></br>
 
-<h2>Analysis:<h2>
+
 
 
 

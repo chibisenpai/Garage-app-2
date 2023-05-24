@@ -21,8 +21,12 @@ Public Class login
 
             If (count > 0) Then
                 MsgBox("login succeeded")
-                Form2.Show()
-
+                username.Text = ("")
+                pass.Text = ("")
+                Main.Show()
+                Me.Hide()
+            Else
+                MsgBox("password or username is wrong")
             End If
         End If
     End Sub

@@ -16,7 +16,7 @@
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x64</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <DefineDebug>true</DefineDebug>
@@ -84,6 +84,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dataDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="dataDataSet.vb">
+      <DependentUpon>dataDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="posedit.Designer.vb">
+      <DependentUpon>posedit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="posedit.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pos.Designer.vb">
+      <DependentUpon>pos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="pos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="login.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -91,10 +106,10 @@
       <DependentUpon>login.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form2.Designer.vb">
-      <DependentUpon>Form2.vb</DependentUpon>
+    <Compile Include="Main.Designer.vb">
+      <DependentUpon>Main.vb</DependentUpon>
     </Compile>
-    <Compile Include="Form2.vb">
+    <Compile Include="Main.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -118,11 +133,20 @@
     <EmbeddedResource Include="login.resx">
       <DependentUpon>login.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pos.resx">
+      <DependentUpon>pos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="posedit.resx">
+      <DependentUpon>posedit.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -161,6 +185,12 @@
     </Content>
     <Content Include="imageds\close-square-svgrepo-com.png" />
     <Content Include="imageds\close-square-svgrepo-com.svg" />
+    <Content Include="imageds\credit-card-svgrepo-com %281%29.png" />
+    <Content Include="imageds\credit-card-svgrepo-com.png" />
+    <Content Include="imageds\edit-1479-svgrepo-com.png" />
+    <Content Include="imageds\icons8-pos-terminal-48.png" />
+    <Content Include="imageds\icons8-pos-terminal.gif" />
+    <Content Include="imageds\paying.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
