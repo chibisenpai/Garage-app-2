@@ -1,39 +1,42 @@
-﻿Public Class pos
-    Private Sub PatientBindingNavigatorSaveItem_Click_3(sender As Object, e As EventArgs)
-        Me.Validate()
-        Me.POSBindingSource.EndEdit()
-        Me.TableAdapterManager.UpdateAll(Me.DataDataSet)
+﻿Imports Guna.UI2.WinForms
+Imports System.Data.OleDb
+Public Class pos
+    'to connect data base and load it to the data grid view
+    Dim conn As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|data.accdb")
+    Private Sub bind_date()
+        Dim cmd1 As New OleDbCommand("select * from POS", conn)
+        Dim da As New OleDbDataAdapter
+        da.SelectCommand = cmd1
+        Dim POS As New DataTable
+        POS.Clear()
+        da.Fill(POS)
+        Guna2DataGridView1.DataSource = POS
 
     End Sub
+
+    Private Sub pos_Load(sender As Object, e As EventArgs) Handles Me.Load
+        'TODO: This line of code loads data into the 'DataDataSet.POS' table. You can move, or remove it, as needed.
+
+        bind_date()
+    End Sub
+    'add new fields into the pos system
     Private Sub save_Click(sender As Object, e As EventArgs) Handles save.Click
-        If Trim(First_nameTextBox.Text) = Nothing Or (Last_nameTextBox.Text) = Nothing Or Trim(Contact_noTextBox.Text) = "" Or Trim(ServiceTextBox.Text) = "" Or Trim(PriceTextBox.Text) = "" Or Trim(Vehicle_typeTextBox.Text) = "" Or Trim(ServiceTextBox.Text) = "" Or Trim(Last_nameTextBox.Text) = "" Then
-            MessageBox.Show("Please fill all the fields", "Incomplete Data", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        Else
-            Me.POSTableAdapter.Insert(First_nameTextBox.Text, Last_nameTextBox.Text, Contact_noTextBox.Text, PriceTextBox.Text, ServiceTextBox.Text, Vehicle_typeTextBox.Text)
-            MessageBox.Show("New Purchase has been added successfully", "Save", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            Me.POSTableAdapter.Fill(Me.DataDataSet.POS)
-        End If
+        Dim strsql As String
+        strsql = "Insert into POS(first_name,last_name,Contact_no,vehicle,service,price)Values(@first_name,@last_name,@Conatact_no,@vehicle,@service,@price)"
+        Dim cmd2 As New OleDbCommand(strsql, conn)
+        cmd2.Parameters.AddWithValue("@first_name", First_nameTextBox.Text)
+        cmd2.Parameters.AddWithValue("@last_name", Last_nameTextBox.Text)
+        cmd2.Parameters.AddWithValue("@Conatact_no", Contact_noTextBox.Text)
+        cmd2.Parameters.AddWithValue("@vehicle", Vehicle_typeTextBox.Text)
+        cmd2.Parameters.AddWithValue("@service", ServiceComboBox.Text)
+        cmd2.Parameters.AddWithValue("@price", PriceTextBox.Text)
+        conn.Open()
+        cmd2.ExecuteNonQuery()
+        conn.Close()
+        bind_date()
     End Sub
-
-
-
-
-    Private Sub pos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: This line of code loads data into the 'DataDataSet.Login' table. You can move, or remove it, as needed.
-        Me.LoginTableAdapter.Fill(Me.DataDataSet.Login)
-        Me.POSTableAdapter.Fill(Me.DataDataSet.POS)
-        Last_nameTextBox.Clear()
-        First_nameTextBox.Clear()
-        Contact_noTextBox.Clear()
-        Vehicle_typeTextBox.Clear()
-        ServiceTextBox.Clear()
-        PriceTextBox.Clear()
-        PriceTextBox.Clear()
-    End Sub
-
-    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles Guna2Button1.Click
+    'hides the tab
+    Private Sub back_Click(sender As Object, e As EventArgs) Handles back.Click
         Me.Hide()
     End Sub
-
-
 End Class

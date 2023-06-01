@@ -2,6 +2,8 @@
 Imports System.Data.OleDb
 Imports Microsoft.VisualBasic.ApplicationServices
 
+
+
 Public Class login
     Dim connect As New OleDbConnection(My.Settings.dataConnectionString)
 
@@ -33,5 +35,13 @@ Public Class login
 
     Private Sub Guna2PictureBox2_Click(sender As Object, e As EventArgs) Handles Guna2PictureBox2.Click
         Me.Close()
+    End Sub
+
+    Private Sub Guna2Panel2_Paint(sender As Object, e As PaintEventArgs) Handles Guna2Panel2.Paint
+
+    End Sub
+
+    Private Sub username_TextChanged(sender As Object, e As EventArgs) Handles username.TextChanged
+
     End Sub
 End Class
